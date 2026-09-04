@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#eee8ff" />
+    <meta name="description" content="A gentle storybook touch-typing adventure for kids." />
+    <title>Story Keys — Touch Typing Adventure</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main class="app-shell" aria-label="Story Keys touch typing lesson">
+      <header class="topbar">
+        <button class="round-button home-button" type="button" aria-label="Go home" data-action="home">
+          <span class="home-icon" aria-hidden="true"></span>
+        </button>
+        <div class="lesson-progress" aria-label="Lesson progress">
+          <div class="progress-track"><span class="progress-fill" id="progressFill"></span></div>
+          <div class="progress-markers" aria-hidden="true"><i>✦</i><i>✦</i><i>★</i><i>★</i></div>
+        </div>
+        <button class="round-button pause-button" type="button" aria-label="Pause lesson" data-action="pause">
+          <span class="pause-icon" aria-hidden="true"><b></b><b></b></span>
+        </button>
+      </header>
+
+      <section class="workspace">
+        <div class="scene-card">
+          <img src="assets/red-hood-meadow.png" alt="A red-hooded girl running through a sunny flower-filled forest" />
+          <div class="scene-shade"></div>
+          <div class="scene-caption"><span class="chapter-pill" id="chapterPill">CHAPTER 1</span><p id="chapterName">The whispering woodland</p></div>
+          <div class="sparkle sparkle-one">✦</div><div class="sparkle sparkle-two">✦</div>
+        </div>
+
+        <section class="lesson-card" aria-live="polite">
+          <div class="card-heading">
+            <div><p class="eyebrow">Type the tale</p><h1 id="lessonTitle">Little Red’s forest dash</h1></div>
+            <button class="sound-button" type="button" aria-label="Read line aloud" data-action="speak">⌁<span>🔊</span></button>
+          </div>
+          <div class="story-box"><p class="story-line" id="storyLine"></p><p class="hint" id="hint">Tap the glowing key to begin the adventure.</p></div>
+          <div class="lesson-meta">
+            <div class="star-score"><span>★</span><strong id="starScore">0</strong><small>stars</small></div>
+            <div class="chapter-count"><strong id="lineCount">1</strong><span>/ 5 lines</span></div>
+          </div>
+          <div class="keyboard" id="keyboard" aria-label="On-screen keyboard"></div>
+          <div class="bottom-controls">
+            <button class="nav-key" type="button" aria-label="Restart line" data-action="restart">↶</button>
+            <button class="space-key" type="button" aria-label="Space" data-key=" ">SPACE</button>
+            <button class="nav-key" type="button" aria-label="Next line" data-action="skip">→</button>
+          </div>
+          <p class="status-message" id="statusMessage" role="status"></p>
+        </section>
+      </section>
+
+      <footer class="footer-note"><span class="heart">♥</span> Every little key makes a big story.</footer>
+      <div class="pause-layer" id="pauseLayer" hidden>
+        <div class="pause-dialog" role="dialog" aria-modal="true" aria-labelledby="pauseTitle">
+          <span class="pause-twinkle">✦</span><h2 id="pauseTitle">A tiny story break?</h2>
+          <p>Your forest friends will wait right here.</p>
+          <button class="primary-button" type="button" data-action="resume">Keep typing <span>→</span></button>
+          <button class="text-button" type="button" data-action="restart">Start this line again</button>
+        </div>
+      </div>
+      <div class="toast" id="toast" role="status"></div>
+    </main>
+    <script src="app.js"></script>
+  </body>
+</html>

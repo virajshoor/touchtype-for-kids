@@ -1,0 +1,14 @@
+[Desktop Entry]
+Version=1.0
+Type=Application
+Name=Story Keys
+GenericName=Touch typing for kids
+Comment=Type through a magical fairy-tale adventure
+Exec=@@APP_DIR@@/launch.sh
+TryExec=@@APP_DIR@@/launch.sh
+Icon=story-keys
+Terminal=false
+Categories=Education;
+Keywords=typing;keyboard;kids;learning;fairy tale;
+StartupNotify=true
+StartupWMClass=StoryKeys
