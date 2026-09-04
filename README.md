@@ -38,7 +38,20 @@ Then place it in the bar if Omarchy does not add it automatically:
 omarchy bar move io.github.virajshoor.story-keys --section center
 ```
 
+Remove it with:
+
+```bash
+omarchy plugin remove io.github.virajshoor.story-keys --yes
+```
+
 **Status: Story Keys is not integrated into Omarchy’s upstream/system installation itself.** It is a standalone public plugin and does not edit `/usr/share/omarchy/` or any system files. The plugin runs with your user permissions and launches the repository’s `launch.sh`.
+
+### Dependencies and permissions
+
+- The bar button uses the Omarchy Quattro shell plugin runtime.
+- The typing app uses Python 3’s standard-library web server and Chromium or Google Chrome for app-window mode.
+- No third-party runtime packages, root privileges, background service, telemetry, or network account are required.
+- The plugin launches `launch.sh` with the current user’s permissions. It does not overwrite user configuration without an explicit install or settings action.
 
 ## Omarchy Spotlight / Walker
 
@@ -79,6 +92,10 @@ launch.sh              Chromium app-window launcher
 story-keys.desktop     desktop-entry template
 install-omarchy.sh     user-level Spotlight/Walker installer
 ```
+
+## Marketplace submission checklist
+
+These statements document the repository’s submission requirements for the official Omarchy plugin marketplace. See [PLUGIN_SUBMISSION.md](PLUGIN_SUBMISSION.md) for the maintainer checklist and scope notes.
 
 ## License
 
