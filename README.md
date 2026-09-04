@@ -22,9 +22,27 @@ For an app-style window on Omarchy:
 
 That starts a private local server and opens Story Keys in a Chromium app window. Close the window to stop the local server.
 
+## Omarchy plugin
+
+Story Keys is packaged as a `bar-widget` plugin. It adds a small keyboard button to the Omarchy bar; clicking it opens the fairy-tale typing app.
+
+Install the public plugin with:
+
+```bash
+omarchy plugin add https://github.com/virajshoor/touchtype-for-kids.git --enable
+```
+
+Then place it in the bar if Omarchy does not add it automatically:
+
+```bash
+omarchy bar move io.github.virajshoor.story-keys --section center
+```
+
+**Status: Story Keys is not integrated into Omarchy’s upstream/system installation itself.** It is a standalone public plugin and does not edit `/usr/share/omarchy/` or any system files. The plugin runs with your user permissions and launches the repository’s `launch.sh`.
+
 ## Omarchy Spotlight / Walker
 
-**Status: Story Keys is not yet integrated into Omarchy itself.** It does not edit `/usr/share/omarchy/` or any system files. A safe, user-level desktop entry is included so you can make it discoverable in Omarchy’s Spotlight/Walker launcher:
+The repository also includes a safe, user-level desktop entry so Story Keys can be launched directly from Omarchy’s Spotlight/Walker app search:
 
 ```bash
 ./install-omarchy.sh
@@ -53,6 +71,9 @@ index.html             interface and accessible controls
 styles.css             responsive storybook visual system
 app.js                 lesson data and typing interaction
 assets/                original story illustration
+manifest.json          Omarchy plugin manifest
+BarWidget.qml          Omarchy bar button entry point
+LICENSE                MIT license
 run.sh                 browser-based local development server
 launch.sh              Chromium app-window launcher
 story-keys.desktop     desktop-entry template

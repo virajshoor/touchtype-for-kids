@@ -1,0 +1,19 @@
+{
+  "schemaVersion": 1,
+  "id": "io.github.virajshoor.story-keys",
+  "name": "Story Keys",
+  "version": "0.3.0",
+  "author": "Viraj Shoor",
+  "license": "MIT",
+  "description": "A magical fairy-tale touch-typing adventure for kids.",
+  "kinds": ["bar-widget"],
+  "entryPoints": {
+    "barWidget": "BarWidget.qml"
+  },
+  "barWidget": {
+    "displayName": "Story Keys",
+    "category": "Education",
+    "allowMultiple": false,
+    "defaultSection": "center"
+  }
+}
